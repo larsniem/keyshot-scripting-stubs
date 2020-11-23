@@ -1,4 +1,4 @@
-# Pxthon stubs for keyshot
+# Python stubs for keyshot
 
 Work in Progress! [Progress](https://github.com/larsniem/keyshot-scripting-stubs/issues/1)
 
