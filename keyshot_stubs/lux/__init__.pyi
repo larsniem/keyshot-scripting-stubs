@@ -3,11 +3,11 @@ from typing import Any, List, Tuple, Dict, Callable, Union
 
 from .. import luxmath
 
-from .Env import Env
-from .ImageStyle import ImageStyle
-from .MultiMaterial import MultiMaterial
-from .RenderOptions import RenderOptions
-from .SceneNode import SceneNode
+from .Env import Env as Env
+from .ImageStyle import ImageStyle as ImageStyle
+from .MultiMaterial import MultiMaterial as MultiMaterial
+from .RenderOptions import RenderOptions as RenderOptions
+from .SceneNode import SceneNode as SceneNode
 
 DIALOG_CHECK = 4
 DIALOG_DOUBLE = 2
