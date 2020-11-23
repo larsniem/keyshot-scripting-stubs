@@ -3,3 +3,7 @@
 .idea/*
 keyshot_stubs_raw
 keyshot_stubs/__init__.py
+build/
+dist/
+*.egg/
+*.egg-info/
