@@ -11,6 +11,16 @@ class Matrix():
       Matrix(3) # -> (3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 3)
       Matrix((1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)) # -> (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)
     """
+
+    def __init__(self, *values) -> None:
+        """
+        The constructor takes either a number or a tuple/list of size 16.
+        Examples:
+        Matrix(3) # -> (3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 3)
+        Matrix((1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)) # -> (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)
+        """
+        pass
+
     def __dir__(self) :
         """
         Default dir() implementation.

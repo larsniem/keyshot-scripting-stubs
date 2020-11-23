@@ -16,6 +16,15 @@ class Vector():
       Vector(1).add(1)         # -> (2, 2, 2)
       Vector(1).add((1, 2, 3)) # -> (2, 3, 4)
     """
+    def __init__(self, *values) -> None:
+        """
+        Accepts 1 or 3 float values or a tuple of length 3 to instanciate a vector
+        Vector((1, 2, 3)) # -> (1, 2, 3)
+        Vector(1)         # -> (1, 1, 1)
+        Vector(1, 2, 3)   # -> (1, 2, 3)
+        """
+        pass
+
     def __dir__(self) :
         """
         Default dir() implementation.
