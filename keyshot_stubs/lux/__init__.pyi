@@ -90,7 +90,7 @@ def clearGeometry(ask: bool = False) :
     ask = Whether to ask to clear or not (default = false).
     """
     pass
-def createMultiMaterial(name: str, mat: luxmath.Matrix) :
+def createMultiMaterial(name: str, mat: luxmath.Matrix) -> MultiMaterial:
     """
     Create a multi-material based on an existing material.
     name = Name of new multi-material. *
@@ -151,12 +151,12 @@ def getActiveConfiguration() :
     Returns a dict of the current active configuration.
     """
     pass
-def getActiveEnvironment() :
+def getActiveEnvironment() -> Env:
     """
     Get active environment instance for manipulating and retrieving information.
     """
     pass
-def getActiveImageStyle() :
+def getActiveImageStyle() -> ImageStyle:
     """
     Get active image style instance for manipulating and retrieving information.
     """
@@ -235,7 +235,7 @@ def getExternalFiles() :
     Returns a list of all external files needed by the current scene.
     """
     pass
-def getImageStyles() :
+def getImageStyles() -> List[ImageStyle]:
     """
     Get list of image styles of the scene.
     """
@@ -424,7 +424,7 @@ def getModelSets() :
     Returns the list of active model sets.
     """
     pass
-def getMultiMaterial(name: str) :
+def getMultiMaterial(name: str) -> MultiMaterial:
     """
     Get multi-material instanced from material name.
     name = Name of multi-material. *
@@ -456,7 +456,7 @@ def getRenderLayers() :
     Returns a list of render layers in the current scene.
     """
     pass
-def getRenderOptions(defaults: bool = False) :
+def getRenderOptions(defaults: bool = False) -> RenderOptions:
     """
     Returns render options as a lux.RenderOptions object. If defaults is set then it will return the internal defaults, otherwise it's the values as they appear in the render dialog.
     defaults = Return defaults or not (default = false).
@@ -472,7 +472,7 @@ def getSceneMaterials() :
     Gets currently used materials of the scene.
     """
     pass
-def getSceneTree() :
+def getSceneTree() -> SceneNode:
     """
     Get lux.SceneNode object representing the root of the scene tree.
     """
