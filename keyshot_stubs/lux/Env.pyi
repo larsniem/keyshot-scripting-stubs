@@ -36,90 +36,91 @@ class Env():
         """
         pass
 
-    def getBackgroundColor(self) :
+    #TODO: Return Type?
+    def getBackgroundColor(self) -> Tuple[float, float, float]:
         """
         Get background color as an RGB tuple.
         """
         pass
-
-    def getBackplateImage(self) :
+    #TODO: Return Type?
+    def getBackplateImage(self) -> str:
         """
         Get backplate image, if set.
         """
         pass
 
-    def getBrightness(self) :
+    def getBrightness(self) -> float:
         """
         Get environment brightness in the form of a float value.
         """
         pass
 
-    def getFlattenGround(self) :
+    def getFlattenGround(self) -> bool:
         """
         Returns whether flattening of the ground is enabled or disabled.
         """
         pass
 
-    def getGroundReflections(self) :
+    def getGroundReflections(self) -> bool:
         """
         Returns whether ground reflections are enabled or disabled.
         """
         pass
 
-    def getGroundShadows(self) :
+    def getGroundShadows(self) -> bool:
         """
         Returns whether ground shadows are enabled or disabled.
         """
         pass
-
-    def getGroundShadowsColor(self) :
+    #TODO: Return Type?
+    def getGroundShadowsColor(self) -> Tuple[float,float,float]:
         """
         Get ground shadows color as an RGB tuple.
         """
         pass
 
-    def getGroundSize(self) :
+    def getGroundSize(self) -> float:
         """
         Get environment ground size.
         """
         pass
 
-    def getHeight(self) :
+    def getHeight(self) -> float:
         """
         Get environment height.
         """
         pass
 
-    def getLightingEnvironment(self) :
+    def getLightingEnvironment(self) -> str:
         """
         Get the environment image.
         """
         pass
 
-    def getName(self) :
+    def getName(self) -> str:
         """
         Get environment name.
         """
         pass
 
-    def getOcclusionGroundShadows(self) :
+    def getOcclusionGroundShadows(self) -> bool:
         """
         Returns whether occlusion ground shadows are enabled or disabled.
         """
         pass
 
-    def getRotation(self) :
+    def getRotation(self) -> float:
         """
         Get environment rotation.
         """
         pass
 
-    def getSize(self) :
+    def getSize(self) -> float:
         """
         Get environment size.
         """
         pass
-
+    #TODO: color Type?
     def setBackgroundColor(self, color: Tuple [float,float,float]) :
         """
         Apply RGB color as the background color.
@@ -161,7 +162,7 @@ class Env():
         enable = Boolean value for enabling or disabling ground shadows. *
         """
         pass
-
+    #TODO: color Type?
     def setGroundShadowsColor(self, color: Tuple [float,float,float]) :
         """
         Apply RGB color as the ground shadows color.
