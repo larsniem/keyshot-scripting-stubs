@@ -36,19 +36,19 @@ class MultiMaterial():
         """
         pass
 
-    def getActiveMaterial(self) :
+    def getActiveMaterial(self) -> MultiMaterial:
         """
         Gets the active sub material of the multi-material.
         """
         pass
 
-    def getName(self) :
+    def getName(self) -> str:
         """
         Gets the name of the multi-material.
         """
         pass
 
-    def getSubMaterials(self) :
+    def getSubMaterials(self) -> List[MultiMaterial]:
         """
         Gets the list of sub materials of the multi-material. The order matters.
         """
@@ -67,7 +67,7 @@ class MultiMaterial():
         name = Name of multi-material. *
         """
         pass
-
+    #TODO: mats Type?
     def setSubMaterials(self, mats: List[str]) :
         """
         Sets the list of sub materials of the multi-material. The order matters.

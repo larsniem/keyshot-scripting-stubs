@@ -36,49 +36,49 @@ class ImageStyle():
         """
         pass
 
-    def getBloom(self) :
+    def getBloom(self) -> bool:
         """
         Returns whether bloom is enabled or disabled for the image style.
         """
         pass
 
-    def getChromaticAberration(self) :
+    def getChromaticAberration(self) -> bool:
         """
         Returns whether chromatic aberration is enabled or disabled for the image style.
         """
         pass
 
-    def getColor(self) :
+    def getColor(self) -> bool:
         """
         Returns whether color is enabled or disabled for the photographic image style.
         """
         pass
 
-    def getCurve(self) :
+    def getCurve(self) -> bool:
         """
         Returns whether curve is enabled or disabled for the photographic image style.
         """
         pass
 
-    def getDenoise(self) :
+    def getDenoise(self) -> bool:
         """
         Returns whether denoise is enabled or disabled for the image style.
         """
         pass
 
-    def getKind(self) :
+    def getKind(self) -> int:
         """
         Get image style kind. Returns ||lux.IMAGE_STYLE_BASIC|| or ||lux.IMAGE_STYLE_PHOTOGRAPHIC||
         """
         pass
 
-    def getName(self) :
+    def getName(self) -> str:
         """
         Get image style name.
         """
         pass
 
-    def getVignette(self) :
+    def getVignette(self) -> bool:
         """
         Returns whether vignette is enabled or disabled for the image style.
         """
