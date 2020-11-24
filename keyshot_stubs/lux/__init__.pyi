@@ -1,4 +1,9 @@
 from __future__ import annotations
+from keyshot_stubs import luxmath
+from keyshot_stubs import luxmath
+from keyshot_stubs import luxmath
+from keyshot_stubs import luxmath
+from keyshot_stubs import luxmath
 from typing import Any, List, Tuple, Dict, Callable, Union
 
 from .. import luxmath
@@ -78,18 +83,21 @@ XR_TYPE_HEMISPHERICAL = 3
 XR_TYPE_SPHERICAL = 2
 XR_TYPE_TUMBLE = 4
 XR_TYPE_TURNTABLE = 1
-def applyMaterialMapping(dict: Dict) :
+
+def applyMaterialMapping(dict: Dict[int,str]) :
     """
     Applies a material mapping.
     dict = Dictionary of object IDs to material names. *
     """
     pass
+
 def clearGeometry(ask: bool = False) :
     """
     Clears all geometry in the scene.
     ask = Whether to ask to clear or not (default = false).
     """
     pass
+
 def createMultiMaterial(name: str, mat: luxmath.Matrix) -> MultiMaterial:
     """
     Create a multi-material based on an existing material.
@@ -97,23 +105,27 @@ def createMultiMaterial(name: str, mat: luxmath.Matrix) -> MultiMaterial:
     mat = Name of existing material to clone from. Can be a string or list of strings (first item of the list will be used to clone from). *
     """
     pass
+
 def deleteMaterial(name: str) :
     """
     Deletes material from KeyShot context.
     name = Name of material to delete. *
     """
     pass
-def dumpTree() :
+
+def dumpTree() -> str:
     """
     Dumps the scene tree as a JSON string.
     """
     pass
+
 def enablePerformanceMode(enable: bool = True) :
     """
     Enable or disable performance rendering mode.
     enable = Whether to enable or not. (default = true)
     """
     pass
+
 def encodeVideo(folder: str, frameFiles: str, videoName: str, fps: int, firstFrame: int, lastFrame: int, keepFrames: int = True, opts: Any = None) :
     """
     Encodes a video from frames of a folder.
@@ -127,6 +139,7 @@ def encodeVideo(folder: str, frameFiles: str, videoName: str, fps: int, firstFra
     opts = Options specified as a lux.RenderOptions object (see ||lux.getRenderOptions()||).
     """
     pass
+
 def exportFile(path: str, format: Any, mode: Dict) :
     """
     Export scene to a file of specified format.
@@ -146,41 +159,49 @@ def exportFile(path: str, format: Any, mode: Dict) :
     where texture_size is a positive integer for the texture size.
     """
     pass
-def getActiveConfiguration() :
+
+def getActiveConfiguration() -> Dict:
     """
     Returns a dict of the current active configuration.
     """
     pass
+
 def getActiveEnvironment() -> Env:
     """
     Get active environment instance for manipulating and retrieving information.
     """
     pass
+
 def getActiveImageStyle() -> ImageStyle:
     """
     Get active image style instance for manipulating and retrieving information.
     """
     pass
-def getActiveStudio() :
+
+def getActiveStudio() -> str:
     """
     Get active studio name of the scene.
     """
     pass
-def getAnimationFrame() :
+#TODO: Return Type?
+def getAnimationFrame() -> int:
     """
     Returns the current animation frame.
     """
     pass
-def getAnimationInfo() :
+
+def getAnimationInfo() -> Tuple[float, int]:
     """
     Returns information about the animation; the duration in seconds, and the amount of frames.
     """
     pass
-def getAnimationTime() :
+
+def getAnimationTime() -> float:
     """
     Returns the current animation time in seconds.
     """
     pass
+#TODO: result Type, init Type, Return Type?
 def getBrowserDialog(url: str, html: str, result: Callable = None, init: Dict = None) :
     """
     Show browser dialog. Specify either URL or HTML contents.
@@ -190,57 +211,68 @@ def getBrowserDialog(url: str, html: str, result: Callable = None, init: Dict = 
     init = Dictionary of data to initialize the "lux.initData" with in JavaScript of the browser dialog. (default = None)
     """
     pass
-def getCamera() :
+#TODO: Return Type?
+def getCamera() -> SceneNode:
     """
     Retrieves the currently active camera of the scene.
     """
     pass
-def getCameraDirection() :
+#TODO: Return Type?
+def getCameraDirection() -> Tuple[float,float,float]:
     """
     Gets the direction of the active camera of the scene.
     """
     pass
-def getCameraDistance() :
+#TODO: Return Type?
+def getCameraDistance() -> float:
     """
     Get distance from active camera to pivot/look-at point.
     """
     pass
-def getCameraLookAt() :
+#TODO: Return Type?
+def getCameraLookAt() -> Tuple[float,float,float]:
     """
     Gets the lool-at point of the active camera of the scene.
     """
     pass
-def getCameraPosition() :
+#TODO: Return Type?
+def getCameraPosition() -> Tuple[float,float,float]:
     """
     Gets the position of the active camera of the scene.
     """
     pass
-def getCameraUp() :
+#TODO: Return Type?
+def getCameraUp() -> Tuple[float,float,float]:
     """
     Gets the up vector of the active camera of the scene.
     """
     pass
-def getCameras() :
+#TODO: Return Type?
+def getCameras() -> List[SceneNode]:
     """
     Retrieves the cameras of the scene.
     """
     pass
-def getEnvironments() :
+#TODO: Return Type?
+def getEnvironments() -> List[SceneNode]:
     """
     Get list of environents of the scene.
     """
     pass
-def getExternalFiles() :
+#TODO: Return Type?
+def getExternalFiles() -> List[str]:
     """
     Returns a list of all external files needed by the current scene.
     """
     pass
+
 def getImageStyles() -> List[ImageStyle]:
     """
     Get list of image styles of the scene.
     """
     pass
-def getImportOptions(selected_model_set_ids: List[int], ext: bool, getDefaults: bool = False, inclusion_options: bytes = b"31") :
+#TODO: includion_options Type?
+def getImportOptions(selected_model_set_ids: List[int], ext: bool, getDefaults: bool = False, inclusion_options: bytes = b"31") -> Dict:
     """
     Returns import options in a dictionary:
      accurate_tessellation: Use alternative tessellation method when available.
@@ -270,7 +302,8 @@ def getImportOptions(selected_model_set_ids: List[int], ext: bool, getDefaults: 
     inclusion_options = A bitwise collection of flags determining which features to import. Set to 31 for all features.
     """
     pass
-def getInputDialog(values: List[Tuple], opts: Any, title: str, desc: str = None, id: int = None, apply: Callable = None) :
+
+def getInputDialog(values: List[Tuple], opts: Any, title: str, desc: str = None, id: int = None, apply: Callable[..., Dict] = None) :
     """
     Show dialog according to the arguments provided and return the results. It returns None if cancelled.
     
@@ -300,7 +333,8 @@ def getInputDialog(values: List[Tuple], opts: Any, title: str, desc: str = None,
     apply = Lambda expression or function to evaluate when "Apply" is clicked in the dialog. It will be invoked with the result dictionary as parameter. The dialog will not close when "Apply" is clicked. (default = None)
     """
     pass
-def getInputDouble(title: str, label: str, value: float = 0, min: int = -2147483647, max: int = 2147483647, decimal: int = 1) :
+
+def getInputDouble(title: str, label: str, value: float = 0, min: int = -2147483647, max: int = 2147483647, decimal: int = 1) -> float:
     """
     Show dialog to input a double.
     title = Title of the dialog (default = "Enter double").
@@ -311,7 +345,8 @@ def getInputDouble(title: str, label: str, value: float = 0, min: int = -2147483
     decimal = Maximum number of decimal places (default = 1).
     """
     pass
-def getInputFile(multiple: Any = False, title: str = "", folder: str = None, filter: Any = None) :
+
+def getInputFile(multiple: Any = False, title: str = "", folder: str = None, filter: str = None) -> str:
     """
     Show dialog to select file(s) from the file system.
     multiple = If multiple files can be selected (default = false).
@@ -320,14 +355,16 @@ def getInputFile(multiple: Any = False, title: str = "", folder: str = None, fil
     filter = Filter of files to allow selection from (default = none). An example could be "*.obj *.bip" for all OBJs and BIPs.
     """
     pass
-def getInputFolder(title: str, folder: str = None) :
+
+def getInputFolder(title: str, folder: str = None) -> str:
     """
     Show dialog to select a folder from the file system.
     title = Title of the dialog (default = "Select folder").
     folder = The folder to show initially (default = home folder).
     """
     pass
-def getInputInt(title: str, label: str, value: float = 0, min: int = -2147483647, max: int = 2147483647, step: float = 1) :
+
+def getInputInt(title: str, label: str, value: float = 0, min: int = -2147483647, max: int = 2147483647, step: float = 1) -> int:
     """
     Show dialog to input an integer.
     title = Title of the dialog (default = "Enter integer").
@@ -338,7 +375,8 @@ def getInputInt(title: str, label: str, value: float = 0, min: int = -2147483647
     step = Stepping amount (default = 1).
     """
     pass
-def getInputItem(items: Union[List, Tuple], title: str, label: str, current: int = 0, editable: bool = True) :
+
+def getInputItem(items: Union[List, Tuple], title: str, label: str, current: int = 0, editable: bool = True) -> int:
     """
     Show dialog to select an item from a list/tuple of items.
     items = List/tuple of items to choose from. *
@@ -348,7 +386,8 @@ def getInputItem(items: Union[List, Tuple], title: str, label: str, current: int
     editable = If editable or not (default = true).
     """
     pass
-def getInputText(title: str, label: str, value: str = None) :
+
+def getInputText(title: str, label: str, value: str = None) -> str:
     """
     Show dialog to input a string.
     title = Title of the dialog (default = "Enter text").
@@ -356,56 +395,66 @@ def getInputText(title: str, label: str, value: str = None) :
     value = Initial value (default = empty string).
     """
     pass
-def getKeyShotVersion() :
+
+def getKeyShotVersion() -> Tuple[int, int, int, str]:
     """
     Returns the KeyShot version as (major, minor, build, arch) tuple, where arch is either "32 bit" or "64 bit".
     """
     pass
-def getLibraryBackplates(filter: Any) :
+
+def getLibraryBackplates(filter: str) -> List[str]:
     """
     Gets all backplates of the library.
     filter = Filter by relative path in library, e.g. 'Backplates/Outdoor'.
     """
     pass
-def getLibraryEnvironments(filter: Any) :
+
+def getLibraryEnvironments(filter: str) -> List[str]:
     """
     Gets all environments of the library.
     filter = Filter by relative path in library, e.g. 'Environments/Studio/Basic'.
     """
     pass
-def getLibraryMaterials(filter: Any) :
+#TODO: Return Type?
+def getLibraryMaterials(filter: str) -> List[str]:
     """
     Gets all materials of the library.
     filter = Filter by relative path in library, e.g. 'Materials/Metal/Titanium'.
     """
     pass
-def getLibraryTextures(filter: Any) :
+
+def getLibraryTextures(filter: str) -> List[str]:
     """
     Gets all textures of the library.
     filter = Filter by relative path in library, e.g. 'Textures/Wood'.
     """
     pass
-def getLightingPreset() :
+#TODO: Return Type?
+def getLightingPreset() -> str:
     """
     Get currently used lighting preset.
     """
     pass
-def getLightingPresets() :
+#TODO: Return Type?
+def getLightingPresets() -> str:
     """
     Get list of lighting presets, both default and custom ones.
     """
     pass
-def getMaterialMapping() :
+#TODO: Return Type?
+def getMaterialMapping() -> Dict[int, str]:
     """
     Gets material mapping: object ID -> material name.
     """
     pass
-def getMaterialTemplates() :
+
+def getMaterialTemplates() -> List[str]:
     """
     Gets material template names.
     """
     pass
-def getMessageBox(msg: str, title: str, type: Any = 0) :
+
+def getMessageBox(msg: str, title: str, type: Any = MESSAGE_BOX_INFO) :
     """
     Show message box.
     msg = Descriptive text of message box. *
@@ -413,86 +462,102 @@ def getMessageBox(msg: str, title: str, type: Any = 0) :
     type = Type of message box: lux.MESSAGE_BOX_INFO, lux.MESSAGE_BOX_WARNING, lux.MESSAGE_BOX_CRITICAL (default = lux.MESSAGE_BOX_INFO).
     """
     pass
-def getMetaData(format: Any = 0) :
+
+def getMetaData(format: Any = META_DATA_SIMPLE) :
     """
     Get meta data of scene.
     format = Format of meta data can be lux.META_DATA_SIMPLE (simple format .meta) or lux.META_DATA_XMP (XML). (default = XMP)
     """
     pass
-def getModelSets() :
+#TODO: Return Type?
+def getModelSets() -> List[str]:
     """
     Returns the list of active model sets.
     """
     pass
+
 def getMultiMaterial(name: str) -> MultiMaterial:
     """
     Get multi-material instanced from material name.
     name = Name of multi-material. *
     """
     pass
-def getOS() :
+
+def getOS() -> str:
     """
     Returns the OS version string.
     """
     pass
-def getObjectMaterial(obj: int) :
+#TODO: Return Type?
+def getObjectMaterial(obj: Union[int, List[int]]) -> List[MultiMaterial]:
     """
     Gets the material applied to the object(s).
     obj = Object ID or list of IDs. *
     """
     pass
-def getObjects() :
+
+def getObjects() -> List[int]:
     """
     Gets the object IDs of the scene.
     """
     pass
-def getRenderEngine() :
+
+def getRenderEngine() -> str:
     """
     Get render engine currently in use.
     """
     pass
-def getRenderLayers() :
+#TODO: Return Type?
+def getRenderLayers() -> List[str]:
     """
     Returns a list of render layers in the current scene.
     """
     pass
+
 def getRenderOptions(defaults: bool = False) -> RenderOptions:
     """
     Returns render options as a lux.RenderOptions object. If defaults is set then it will return the internal defaults, otherwise it's the values as they appear in the render dialog.
     defaults = Return defaults or not (default = false).
     """
     pass
-def getSceneInfo() :
+
+def getSceneInfo() -> Dict:
     """
     Returns information about the scene in a dict: name, file name, unit/meter scale and number of triangles, objects, nurbs, curves, scene width/height, and rendering width/height.
     """
     pass
-def getSceneMaterials() :
+#TODO: Return Type?
+def getSceneMaterials() -> List[MultiMaterial]:
     """
     Gets currently used materials of the scene.
     """
     pass
+
 def getSceneTree() -> SceneNode:
     """
     Get lux.SceneNode object representing the root of the scene tree.
     """
     pass
-def getSphericalCamera() :
+#TODO: Return Type?
+def getSphericalCamera() -> Tuple[float,float,float]:
     """
     Get spherical information in degrees of active camera as a list: azimuth, inclination, and
     twist.
     """
     pass
-def getStudios() :
+
+def getStudios() -> List[str]:
     """
     Get studio names of the scene.
     """
     pass
-def hasContents() :
+
+def hasContents() -> bool:
     """
     Determine if there is any content in the scene.
     """
     pass
+
 def importFile(path: str, showOpts: bool = False, dontAsk: bool = True, opts: Any = b"") :
     """
     Imports a file.
@@ -502,6 +567,7 @@ def importFile(path: str, showOpts: bool = False, dontAsk: bool = True, opts: An
     opts = Options specified as a dictionary (see ||lux.getImportOptions()||).
     """
     pass
+
 def importMaterials(file: str, folder: str) :
     """
     Imports materials from MTL file into material library.
@@ -509,42 +575,50 @@ def importMaterials(file: str, folder: str) :
     folder = The existing sub material library folder to add the materials to, i.e. 'Glass/Basic' (default = '.', which is the root materials folder).
     """
     pass
-def isCameraUnsaved() :
+
+def isCameraUnsaved() -> bool:
     """
     Checks if current camera has unsaved changes.
     """
     pass
-def isHeadless() :
+
+def isHeadless() -> bool:
     """
     Returns whether KeyShot is running in headless or GUI mode.
     """
     pass
-def isPaused() :
+
+def isPaused() -> bool:
     """
     Checks if renderer is paused.
     """
     pass
-def isPerformanceModeEnabled() :
+
+def isPerformanceModeEnabled() -> bool:
     """
     Checks if performance rendering mode is enabled.
     """
     pass
-def isSceneChanged() :
+
+def isSceneChanged() -> bool:
     """
     Checks if scene has been changed.
     """
     pass
-def isUndoEnabled() :
+
+def isUndoEnabled() -> bool:
     """
     Check whether undo/redo stack is enabled.
     """
     pass
+
 def loadMaterials(file: str) :
     """
     Loads materials from MTL file as in-project materials, i.e. they will not show up in the material library visually.
     file = MTL File path to load materials from. *
     """
     pass
+#TODO: Return Type?
 def newCamera(name: str, unique: bool = False) :
     """
     Creates a new camera and makes it active. If not creating unique name and the name exists then it returns false.
@@ -552,18 +626,21 @@ def newCamera(name: str, unique: bool = False) :
     unique = Whether to create a unique name using numbers at the end (default = false)
     """
     pass
+#TODO: Return Type?
 def newModelSet(name: str) :
     """
     Create a new model set.
     name = The name of the new model set to create. *
     """
     pass
+
 def newScene(dontAsk: bool = True) :
     """
     Clears the scene.
     dontAsk = Whether or not to suppress blocking dialogs while script is running, e.g. save scene (default = true).
     """
     pass
+
 def openFile(path: str, dontAsk: bool = True) :
     """
     Opens or imports a file.
@@ -571,33 +648,39 @@ def openFile(path: str, dontAsk: bool = True) :
     dontAsk = Whether or not to suppress blocking dialogs while script is running, e.g. save scene (default = true).
     """
     pass
+
 def pause() :
     """
     Pauses renderer.
     """
     pass
-def prettyPrint() :
+#TODO: obj Type?
+def prettyPrint(obj: Any) :
     """
     Returns pretty representation of input object.
     """
     pass
+
 def processQueue() :
     """
     Process render queue.
     """
     pass
+
 def removeCamera(name: str) :
     """
     Removes a camera.
     name = The name of the camera to remove. *
     """
     pass
+
 def removeModelSet(name: str) :
     """
     Remove a model set. If current model set is to be removed then the default model set is chosen.
     name = The name of the new model set to remove. *
     """
     pass
+
 def renderAnimation(folder: str, frameFiles: str, keepFrames: int = True, width: int = 0, height: float = 0, fps: int = 12, videoName: str = None, opts: Any = b"", format: Any = b"") :
     """
     Renders frames of the scene to a folder and/or video file.
@@ -612,6 +695,7 @@ def renderAnimation(folder: str, frameFiles: str, keepFrames: int = True, width:
     format = Image format. Can be one of the following values: lux.RENDER_OUTPUT_JPEG, lux.RENDER_OUTPUT_PNG, lux.RENDER_OUTPUT_EXR, lux.RENDER_OUTPUT_TIFF8, lux.RENDER_OUTPUT_TIFF32, lux.RENDER_OUTPUT_PSD8, lux.RENDER_OUTPUT_PSD16, lux.RENDER_OUTPUT_PSD32 (requires file extension to match).
     """
     pass
+
 def renderConfiguration(name: str, folder: str, web: bool = False, modelVariations: bool = False, materialVariations: bool = False, studioVariations: bool = False, iBook: bool = False, iBookWidth: int = 0, iBookHeight: int = 0, opts: Any = 0) :
     """
     Renders a configuration of the scene.
@@ -627,6 +711,7 @@ def renderConfiguration(name: str, folder: str, web: bool = False, modelVariatio
     opts = Options specified as a lux.RenderOptions object (see ||lux.getRenderOptions()||).
     """
     pass
+
 def renderFrames(folder: str, frameFiles: str, width: int = 0, height: float = 0, fps: int = 12, opts: Any = 0, format: Any = 0) :
     """
     Renders frames of the scene to a folder.
@@ -639,6 +724,7 @@ def renderFrames(folder: str, frameFiles: str, width: int = 0, height: float = 0
     format = Image format. Can be one of the following values: lux.RENDER_OUTPUT_JPEG, lux.RENDER_OUTPUT_PNG, lux.RENDER_OUTPUT_EXR, lux.RENDER_OUTPUT_TIFF8, lux.RENDER_OUTPUT_TIFF32, lux.RENDER_OUTPUT_PSD8, lux.RENDER_OUTPUT_PSD16, lux.RENDER_OUTPUT_PSD32 (requires file extension to match).
     """
     pass
+
 def renderImage(path: str, width: int = 0, height: float = 0, opts: Any = 0, format: Any = 0) :
     """
     Renders the scene to an image file.
@@ -649,6 +735,7 @@ def renderImage(path: str, width: int = 0, height: float = 0, opts: Any = 0, for
     format = Image format. Can be one of the following values: lux.RENDER_OUTPUT_JPEG, lux.RENDER_OUTPUT_PNG, lux.RENDER_OUTPUT_EXR, lux.RENDER_OUTPUT_TIFF8, lux.RENDER_OUTPUT_TIFF32, lux.RENDER_OUTPUT_PSD8, lux.RENDER_OUTPUT_PSD16, lux.RENDER_OUTPUT_PSD32 (requires file extension to match).
     """
     pass
+
 def renderMultiMaterial(name: str, folder: str, opts: Any) :
     """
     Renders a multi-material in the scene.
@@ -657,6 +744,7 @@ def renderMultiMaterial(name: str, folder: str, opts: Any) :
     opts = Options specified as a lux.RenderOptions object (see ||lux.getRenderOptions()||).
     """
     pass
+
 def renderXR(folder: str, name: str, type: Any = 0, center: Any = 0, width: int = 0, height: int = 0, vwidth: int = 0, vheight: int = 0, hframes: int = 0, vframes: int = 0, hbegin: int = 0, hend: int = 0, vbegin: int = 0, vend: int = 0, opts: Any = 0) :
     """
     Renders a XR from the scene.
@@ -677,76 +765,89 @@ def renderXR(folder: str, name: str, type: Any = 0, center: Any = 0, width: int 
     opts = Explicit render options specified as a lux.RenderOptions object (see ||lux.getRenderOptions()||). NOTE that some values are overwritten by other options provided to this function and internally to suite the XR rendering.
     """
     pass
+
 def saveCamera() :
     """
     Saves current camera if there are unsaved changes.
     """
     pass
+
 def saveFile(path: str) :
     """
     Saves scene to a file. If no path is given then known path is used or a dialog will ask.
     path = File to save to.
     """
     pass
+
 def savePackage(path: str) :
     """
     Saves scene to a KSP package. If no path is given then known path is used or a dialog will ask.
     path = File to save to.
     """
     pass
-def screenshot() :
+
+def screenshot() -> str:
     """
     Take a screenshot of current realtime window state and return the path to it.
     """
     pass
+
 def setActiveEnvironment(name: str) :
     """
     Set active environment of the scene. Use ||lux.getEnvironments()|| to get a list of names.
     name = Name of the environment. *
     """
     pass
+
 def setActiveImageStyle(name: str) :
     """
     Set active image style of the scene. Use ||lux.getImageStyles()|| to get a list of names.
     name = Name of the image style. *
     """
     pass
+
 def setActiveStudio(name: str) :
     """
     Set active studio name of the scene.
     name = Name of studio. *
     """
     pass
+
 def setAnimationFrame(frame: int) :
     """
     Set the animation frame.
     frame = The animation frame number. *
     """
     pass
+
 def setAnimationTime(secs: float) :
     """
     Set the animation time in seconds.
     secs = The animation time in seconds as a floating-point number. *
     """
     pass
+
 def setCamera(camera: str) :
     """
     Sets the active camera of the scene.
     camera = The name of the camera to use. *
     """
     pass
-def setCameraDirection(dir: luxmath.Vector) :
+
+def setCameraDirection(dir: Tuple[float,float,float]) :
     """
     Sets the direction of the active camera of the scene.
     dir = Direction of the camera (x, y, z). *
     """
     pass
+
 def setCameraDistance(dist: float) :
     """
     Set distance from active camera to pivot/look-at point.
     dist = The distance. *
     """
     pass
+
 def setCameraLookAt(obj: int, pt: Tuple[float, float, float]) :
     """
     Set camera to look at an object or a point.
@@ -754,24 +855,28 @@ def setCameraLookAt(obj: int, pt: Tuple[float, float, float]) :
     pt = Point as tuple (x, y, z).
     """
     pass
+
 def setCameraPosition(pos: Tuple[float, float, float]) :
     """
     Sets the position of the active camera of the scene.
     pos = Position of the camera (x, y, z). *
     """
     pass
+
 def setCameraUp(up: Tuple[float, float, float]) :
     """
     Sets the up vector of the active camera of the scene.
     up = Up vector of the camera (x, y, z). *
     """
     pass
+
 def setLightingPreset(name: str) :
     """
     Set lighting preset to be used.
     name = Name of preset. *
     """
     pass
+
 def setMaterialTemplate(name: str, showSel: bool) :
     """
     Applies a material template to part of the scene or all of it if no argument is given.
@@ -779,25 +884,29 @@ def setMaterialTemplate(name: str, showSel: bool) :
     showSel = Show part selection dialog.
     """
     pass
+
 def setModelSets(names: List[str]) :
     """
     Set active model sets and deativate all others. It returns true if all names of model sets could be activated, and thus false even if only some were activated.
     names = The list of names of model sets to activate. Using 'Default' will set the default model set. An empty list deactivates all model sets. *
     """
     pass
-def setObjectMaterial(mat: luxmath.Matrix, obj: int) :
+
+def setObjectMaterial(mat: str, obj: int) :
     """
     Applies a material to an object in the scene.
     mat = Material name to apply. *
     obj = Object ID to apply to. *
     """
     pass
+
 def setRenderEngine(engine: Any) :
     """
     Set render engine to use for the scene.
     engine = Type of render engine to use: lux.RENDER_ENGINE_PRODUCT, lux.RENDER_ENGINE_INTERIOR, lux.RENDER_ENGINE_PRODUCT_GPU, or lux.RENDER_ENGINE_INTERIOR_GPU. *
     """
     pass
+
 def setSceneUnit(unit: Any, keep: bool = True) :
     """
     Set scene unit and rescale scene if desired.
@@ -805,6 +914,7 @@ def setSceneUnit(unit: Any, keep: bool = True) :
     keep = Whether to keep current size or rescale (default = True).
     """
     pass
+
 def setSphericalCamera(azimuth: float, incl: float, twist: float) :
     """
     Set spherical information of active camera: azimuth, inclination, and twist.
@@ -813,23 +923,27 @@ def setSphericalCamera(azimuth: float, incl: float, twist: float) :
     twist = The spherical twist degrees [-180, 180]. *
     """
     pass
-def setStandardView(view: Any) :
+#TODO: view Type?
+def setStandardView(view: str) :
     """
     Set standard view of currently active camera.
     view = Standard view to set. Must be one of the following: lux.VIEW_FRONT, lux.VIEW_BACK, lux.VIEW_LEFT, lux.VIEW_RIGHT, lux.VIEW_TOP, lux.VIEW_BOTTOM, lux.VIEW_ISOMETRIC. *
     """
     pass
+
 def setUndoEnabled(enable: bool = True) :
     """
     Enable or disable the undo/redo stack. When a script context is destroyed then undo is re-enabled if disabled.
     enable = Enable or not (default = true).
     """
     pass
+
 def sync() :
     """
     Synchronize event queue to enforce pending operations.
     """
     pass
+
 def unpause() :
     """
     Unpauses renderer.
