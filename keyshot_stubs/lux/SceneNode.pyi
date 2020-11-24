@@ -1,7 +1,9 @@
 from __future__ import annotations
+from keyshot_stubs import luxmath
 from typing import Any, List, Tuple, Dict, Callable, Union
 from .. import lux
 from .. import luxmath
+
 class SceneNode():
     """
     SceneNode encapsulates a node in the scene tree and enables for manipulation, such as hiding/showing, locking/unlocking, setting materials etc., and traversal of the tree. It provides a means for searching and accessing groups, objects and animations for global and local operations. Get an instance of the root of the scene tree using ||lux.getSceneTree()||.
@@ -64,21 +66,21 @@ class SceneNode():
         """
         pass
 
-    def dump(self) :
+    def dump(self) -> str:
         """
         Returns a string representation of the node and its children.
         """
         pass
-
-    def duplicate(self, amount: int = 1, linkMats: bool = False) :
+    #TODO:Returns Scene Node
+    def duplicate(self, amount: int = 1, linkMats: bool = False) -> SceneNode:
         """
         Duplicate current node and subtree.
         amount = The amount of duplicates to create (default = 1).
         linkMats = Whether to link materials or not (default = false).
         """
         pass
-
-    def find(self, name: str, mat: luxmath.Matrix, all: bool = False, types: Union[int,List,Tuple] = 0, depth: int = -1) :
+    #TODO:Returns List or Tuple?
+    def find(self, name: str, mat: luxmath.Matrix, all: bool = False, types: Union[int,List,Tuple] = 0, depth: int = -1) -> List[SceneNode]:
         """
         Find nodes in the subtree of this node by searching part names and material names. If no names or materials are given then it will find everything.
         name = Part name to search for (string/tuple/list). 
@@ -89,70 +91,70 @@ class SceneNode():
         """
         pass
 
-    def getBoundingBox(self, world: bool = False) :
+    def getBoundingBox(self, world: bool = False) -> Tuple[luxmath.Vector, luxmath.Vector]:
         """
         Get bounding box of node as a tuple of two vectors: min and max.
         world = Whether to be in world space or not (default = false).
         """
         pass
-
-    def getCenter(self, world: bool = False) :
+    #TODO: Return Type?
+    def getCenter(self, world: bool = False) -> Tuple[float, float, float]:
         """
         Get the center of this node.
         world = Whether to be in world space or not (default = false).
         """
         pass
-
-    def getChildren(self) :
+    #TODO: Return Type?
+    def getChildren(self) -> List[SceneNode]:
         """
         Get children of group.
         """
         pass
-
-    def getID(self) :
+    #TODO: Return Type?
+    def getID(self) -> int:
         """
         Get node ID.
         """
         pass
 
-    def getKind(self) :
+    def getKind(self) -> int:
         """
         Get node kind. Can be one of the following values: lux.NODE_TYPE_GROUP, lux.NODE_TYPE_OBJECT, lux.NODE_TYPE_ANIMATION, lux.NODE_TYPE_MODEL_SET, or lux.NODE_TYPE_MODEL.
         """
         pass
-
-    def getMaterial(self) :
+    #TODO: Return Type?
+    def getMaterial(self) -> lux.MultiMaterial:
         """
         Get material of a node.
         """
         pass
 
-    def getName(self) :
+    def getName(self) -> str:
         """
         Get node name.
         """
         pass
 
-    def getParent(self) :
+    def getParent(self) -> SceneNode:
         """
         Get parent node of this node.
         """
         pass
 
-    def getPath(self, text: bool = False) :
+    def getPath(self, text: bool = False) -> Tuple[SceneNode, ...]:
         """
         Get path from root to this node as a tuple of lux.SceneNode objects.
         text = Whether to return the names instead of lux.SceneNode objects (default = false).
         """
         pass
 
-    def getRenderLayer(self) :
+    def getRenderLayer(self) -> str:
         """
         Get render layer for associated node, if any.
         """
         pass
 
-    def getTransform(self, world: bool = False) :
+    def getTransform(self, world: bool = False) -> luxmath.Matrix:
         """
         Get the transformation matrix of this node.
         world = Whether to be in world space or not (default = false).
@@ -165,56 +167,56 @@ class SceneNode():
         """
         pass
 
-    def isAnimation(self) :
+    def isAnimation(self) -> bool:
         """
         Check if node is an animation.
         """
         pass
 
-    def isDescendantOf(self, group: Any) :
+    def isDescendantOf(self, group: Any) -> bool:
         """
         Checks if this node is a descendant of the input group node.
         group = Group node to check sub-tree of. *
         """
         pass
 
-    def isGroup(self) :
+    def isGroup(self) -> bool:
         """
         Check if node is a group.
         """
         pass
 
-    def isHidden(self) :
+    def isHidden(self) -> bool:
         """
         Check if node is hidden.
         """
         pass
 
-    def isLocked(self) :
+    def isLocked(self) -> bool:
         """
         Check if node is locked.
         """
         pass
 
-    def isModel(self) :
+    def isModel(self) -> bool:
         """
         Check if node is a model (direct child of a model set).
         """
         pass
 
-    def isModelSet(self) :
+    def isModelSet(self) -> bool:
         """
         Check if node is a model set.
         """
         pass
 
-    def isObject(self) :
+    def isObject(self) -> bool:
         """
         Check if node is an object.
         """
         pass
 
-    def isSelected(self) :
+    def isSelected(self) -> bool:
         """
         Check if node is selected in the scene.
         """
@@ -226,7 +228,7 @@ class SceneNode():
         """
         pass
 
-    def moveToGroup(self, group: Any) :
+    def moveToGroup(self, group: SceneNode) :
         """
         Move this node to another group node. Note: This changes the scene tree.
         group = Group node to move this node to. *
