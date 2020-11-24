@@ -40,13 +40,13 @@ class RenderOptions():
         """
         pass
 
-    def getDict(self) :
+    def getDict(self) -> Dict:
         """
         Get specified options as a dictionary. This can be useful to persist options and then supply to a lux.RenderOptions() constructor when needed to render something. Be wary of the version specified in the dictionary, key values will be converted to the latest version automatically.
         """
         pass
-
-    def setAddToQueue(self, add: Any) :
+    #TODO: Type of add?
+    def setAddToQueue(self, add: RenderOptions) :
         """
         Instead of rendering immediately then it will be added to the internal KeyShot queue, waiting for processing. Note that a copy of the scene will be saved to disk each time. Call ||lux.processQueue()|| to process the queue and render what has been added to it.
         add = Whether to add to queue or not. *
