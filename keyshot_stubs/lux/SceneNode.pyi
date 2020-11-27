@@ -71,16 +71,16 @@ class SceneNode():
         Returns a string representation of the node and its children.
         """
         pass
-    #TODO:Returns Scene Node
-    def duplicate(self, amount: int = 1, linkMats: bool = False) -> SceneNode:
+
+    def duplicate(self, amount: int = 1, linkMats: bool = False) -> List[SceneNode]:
         """
         Duplicate current node and subtree.
         amount = The amount of duplicates to create (default = 1).
         linkMats = Whether to link materials or not (default = false).
         """
         pass
-    #TODO:Returns List or Tuple?
-    def find(self, name: str, mat: luxmath.Matrix, all: bool = False, types: Union[int,List,Tuple] = 0, depth: int = -1) -> List[SceneNode]:
+
+    def find(self, name: Union[str, List[str], Tuple[str,...]], mat: Union[str, List[str], Tuple[str,...]] = None, all: bool = False, types: Union[int,List,Tuple] = 0, depth: int = -1) -> Tuple[SceneNode,...]:
         """
         Find nodes in the subtree of this node by searching part names and material names. If no names or materials are given then it will find everything.
         name = Part name to search for (string/tuple/list). 
@@ -97,20 +97,20 @@ class SceneNode():
         world = Whether to be in world space or not (default = false).
         """
         pass
-    #TODO: Return Type?
-    def getCenter(self, world: bool = False) -> Tuple[float, float, float]:
+
+    def getCenter(self, world: bool = False) -> luxmath.Vector:
         """
         Get the center of this node.
         world = Whether to be in world space or not (default = false).
         """
         pass
-    #TODO: Return Type?
-    def getChildren(self) -> List[SceneNode]:
+
+    def getChildren(self) -> Tuple[SceneNode,...]:
         """
         Get children of group.
         """
         pass
-    #TODO: Return Type?
+
     def getID(self) -> int:
         """
         Get node ID.
@@ -122,8 +122,8 @@ class SceneNode():
         Get node kind. Can be one of the following values: lux.NODE_TYPE_GROUP, lux.NODE_TYPE_OBJECT, lux.NODE_TYPE_ANIMATION, lux.NODE_TYPE_MODEL_SET, or lux.NODE_TYPE_MODEL.
         """
         pass
-    #TODO: Return Type?
-    def getMaterial(self) -> lux.MultiMaterial:
+
+    def getMaterial(self) -> str:
         """
         Get material of a node.
         """
