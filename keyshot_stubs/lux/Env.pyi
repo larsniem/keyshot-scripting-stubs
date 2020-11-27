@@ -36,13 +36,13 @@ class Env():
         """
         pass
 
-    #TODO: Return Type?
-    def getBackgroundColor(self) -> Tuple[float, float, float]:
+
+    def getBackgroundColor(self) -> Tuple[int, int, int]:
         """
         Get background color as an RGB tuple.
         """
         pass
-    #TODO: Return Type?
+
     def getBackplateImage(self) -> str:
         """
         Get backplate image, if set.
@@ -72,8 +72,8 @@ class Env():
         Returns whether ground shadows are enabled or disabled.
         """
         pass
-    #TODO: Return Type?
-    def getGroundShadowsColor(self) -> Tuple[float,float,float]:
+
+    def getGroundShadowsColor(self) -> Tuple[int,int,int]:
         """
         Get ground shadows color as an RGB tuple.
         """
@@ -120,8 +120,8 @@ class Env():
         Get environment size.
         """
         pass
-    #TODO: color Type?
-    def setBackgroundColor(self, color: Tuple [float,float,float]) :
+
+    def setBackgroundColor(self, color: Tuple [int,int,int]) :
         """
         Apply RGB color as the background color.
         color = RGB color tuple. *
@@ -162,8 +162,8 @@ class Env():
         enable = Boolean value for enabling or disabling ground shadows. *
         """
         pass
-    #TODO: color Type?
-    def setGroundShadowsColor(self, color: Tuple [float,float,float]) :
+
+    def setGroundShadowsColor(self, color: Tuple [int,int,int]) :
         """
         Apply RGB color as the ground shadows color.
         color = RGB color tuple. *
