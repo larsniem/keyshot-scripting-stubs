@@ -67,7 +67,7 @@ class MultiMaterial():
         name = Name of multi-material. *
         """
         pass
-    #TODO: mats Type?
+
     def setSubMaterials(self, mats: List[str]) :
         """
         Sets the list of sub materials of the multi-material. The order matters.
