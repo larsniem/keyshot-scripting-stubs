@@ -183,7 +183,7 @@ def getActiveStudio() -> str:
     Get active studio name of the scene.
     """
     pass
-#TODO: Return Type?
+
 def getAnimationFrame() -> int:
     """
     Returns the current animation frame.
@@ -201,8 +201,8 @@ def getAnimationTime() -> float:
     Returns the current animation time in seconds.
     """
     pass
-#TODO: result Type, init Type, Return Type?
-def getBrowserDialog(url: str, html: str, result: Callable = None, init: Dict = None) :
+# TODO: Not fully tested, result Type, init Type?
+def getBrowserDialog(url: str = None, html: str = None, result: Callable[[Dict],None] = None, init: Dict = None) :
     """
     Show browser dialog. Specify either URL or HTML contents.
     url = URL to load inside browser dialog (use 'file:///' to load local files).
@@ -211,55 +211,55 @@ def getBrowserDialog(url: str, html: str, result: Callable = None, init: Dict = 
     init = Dictionary of data to initialize the "lux.initData" with in JavaScript of the browser dialog. (default = None)
     """
     pass
-#TODO: Return Type?
-def getCamera() -> SceneNode:
+
+def getCamera() -> str:
     """
     Retrieves the currently active camera of the scene.
     """
     pass
-#TODO: Return Type?
-def getCameraDirection() -> Tuple[float,float,float]:
+
+def getCameraDirection() -> List[float]:
     """
     Gets the direction of the active camera of the scene.
     """
     pass
-#TODO: Return Type?
+
 def getCameraDistance() -> float:
     """
     Get distance from active camera to pivot/look-at point.
     """
     pass
-#TODO: Return Type?
-def getCameraLookAt() -> Tuple[float,float,float]:
+
+def getCameraLookAt() -> List[float]:
     """
     Gets the lool-at point of the active camera of the scene.
     """
     pass
-#TODO: Return Type?
-def getCameraPosition() -> Tuple[float,float,float]:
+
+def getCameraPosition() -> List[float]:
     """
     Gets the position of the active camera of the scene.
     """
     pass
-#TODO: Return Type?
-def getCameraUp() -> Tuple[float,float,float]:
+
+def getCameraUp() -> List[float]:
     """
     Gets the up vector of the active camera of the scene.
     """
     pass
-#TODO: Return Type?
-def getCameras() -> List[SceneNode]:
+
+def getCameras() -> List[str]:
     """
     Retrieves the cameras of the scene.
     """
     pass
-#TODO: Return Type?
-def getEnvironments() -> List[SceneNode]:
+
+def getEnvironments() -> List[str]:
     """
     Get list of environents of the scene.
     """
     pass
-#TODO: Return Type?
+# TODO: Return Type?
 def getExternalFiles() -> List[str]:
     """
     Returns a list of all external files needed by the current scene.
@@ -271,7 +271,7 @@ def getImageStyles() -> List[ImageStyle]:
     Get list of image styles of the scene.
     """
     pass
-#TODO: includion_options Type?
+# TODO: includion_options Type?
 def getImportOptions(selected_model_set_ids: List[int], ext: bool, getDefaults: bool = False, inclusion_options: bytes = b"31") -> Dict:
     """
     Returns import options in a dictionary:
@@ -415,7 +415,7 @@ def getLibraryEnvironments(filter: str) -> List[str]:
     filter = Filter by relative path in library, e.g. 'Environments/Studio/Basic'.
     """
     pass
-#TODO: Return Type?
+
 def getLibraryMaterials(filter: str) -> List[str]:
     """
     Gets all materials of the library.
@@ -429,19 +429,19 @@ def getLibraryTextures(filter: str) -> List[str]:
     filter = Filter by relative path in library, e.g. 'Textures/Wood'.
     """
     pass
-#TODO: Return Type?
+
 def getLightingPreset() -> str:
     """
     Get currently used lighting preset.
     """
     pass
-#TODO: Return Type?
-def getLightingPresets() -> str:
+
+def getLightingPresets() -> List[str]:
     """
     Get list of lighting presets, both default and custom ones.
     """
     pass
-#TODO: Return Type?
+
 def getMaterialMapping() -> Dict[int, str]:
     """
     Gets material mapping: object ID -> material name.
@@ -463,13 +463,13 @@ def getMessageBox(msg: str, title: str, type: Any = MESSAGE_BOX_INFO) :
     """
     pass
 
-def getMetaData(format: Any = META_DATA_SIMPLE) :
+def getMetaData(format: Any = META_DATA_XMP) :
     """
     Get meta data of scene.
     format = Format of meta data can be lux.META_DATA_SIMPLE (simple format .meta) or lux.META_DATA_XMP (XML). (default = XMP)
     """
     pass
-#TODO: Return Type?
+
 def getModelSets() -> List[str]:
     """
     Returns the list of active model sets.
@@ -488,10 +488,11 @@ def getOS() -> str:
     Returns the OS version string.
     """
     pass
-#TODO: Return Type?
-def getObjectMaterial(obj: Union[int, List[int]]) -> List[MultiMaterial]:
+# TODO: Only takes int, and the returns None??? Exception on list of ints'
+def getObjectMaterial(obj: Any) -> List[str]:
     """
     Gets the material applied to the object(s).
+    obj = list of IDs. *
     obj = Object ID or list of IDs. *
     """
     pass
@@ -507,7 +508,7 @@ def getRenderEngine() -> str:
     Get render engine currently in use.
     """
     pass
-#TODO: Return Type?
+
 def getRenderLayers() -> List[str]:
     """
     Returns a list of render layers in the current scene.
@@ -526,8 +527,8 @@ def getSceneInfo() -> Dict:
     Returns information about the scene in a dict: name, file name, unit/meter scale and number of triangles, objects, nurbs, curves, scene width/height, and rendering width/height.
     """
     pass
-#TODO: Return Type?
-def getSceneMaterials() -> List[MultiMaterial]:
+
+def getSceneMaterials() -> List[str]:
     """
     Gets currently used materials of the scene.
     """
@@ -538,8 +539,8 @@ def getSceneTree() -> SceneNode:
     Get lux.SceneNode object representing the root of the scene tree.
     """
     pass
-#TODO: Return Type?
-def getSphericalCamera() -> Tuple[float,float,float]:
+
+def getSphericalCamera() -> List[float]:
     """
     Get spherical information in degrees of active camera as a list: azimuth, inclination, and
     twist.
@@ -558,7 +559,7 @@ def hasContents() -> bool:
     """
     pass
 
-def importFile(path: str, showOpts: bool = False, dontAsk: bool = True, opts: Any = b"") :
+def importFile(path: str, showOpts: bool = False, dontAsk: bool = True, opts: Dict = {}) :
     """
     Imports a file.
     path = File path to import. *
@@ -618,16 +619,16 @@ def loadMaterials(file: str) :
     file = MTL File path to load materials from. *
     """
     pass
-#TODO: Return Type?
-def newCamera(name: str, unique: bool = False) :
+
+def newCamera(name: str, unique: bool = False) -> bool:
     """
     Creates a new camera and makes it active. If not creating unique name and the name exists then it returns false.
     name = The name of the camera to create. *
     unique = Whether to create a unique name using numbers at the end (default = false)
     """
     pass
-#TODO: Return Type?
-def newModelSet(name: str) :
+
+def newModelSet(name: str) -> bool:
     """
     Create a new model set.
     name = The name of the new model set to create. *
@@ -654,7 +655,7 @@ def pause() :
     Pauses renderer.
     """
     pass
-#TODO: obj Type?
+# TODO: obj Type? Not working on SceneNodes?
 def prettyPrint(obj: Any) :
     """
     Returns pretty representation of input object.
@@ -681,7 +682,7 @@ def removeModelSet(name: str) :
     """
     pass
 
-def renderAnimation(folder: str, frameFiles: str, keepFrames: int = True, width: int = 0, height: float = 0, fps: int = 12, videoName: str = None, opts: Any = b"", format: Any = b"") :
+def renderAnimation(folder: str, frameFiles: str, keepFrames: int = True, width: int = 0, height: float = 0, fps: int = 12, videoName: str = None, opts: RenderOptions = None, format: Any = None) :
     """
     Renders frames of the scene to a folder and/or video file.
     folder = Folder to render frames to. *
@@ -923,8 +924,8 @@ def setSphericalCamera(azimuth: float, incl: float, twist: float) :
     twist = The spherical twist degrees [-180, 180]. *
     """
     pass
-#TODO: view Type?
-def setStandardView(view: str) :
+
+def setStandardView(view: Any) :
     """
     Set standard view of currently active camera.
     view = Standard view to set. Must be one of the following: lux.VIEW_FRONT, lux.VIEW_BACK, lux.VIEW_LEFT, lux.VIEW_RIGHT, lux.VIEW_TOP, lux.VIEW_BOTTOM, lux.VIEW_ISOMETRIC. *
