@@ -11,3 +11,7 @@ During WiP from source only.
 ```` shell script
 pip install git+https://github.com/larsniem/keyshot-scripting-stubs.git
 ````
+
+## If you find any mistakes (aka collaboration)
+
+If you find any mistakes, just create an issue or may correct them yourself and create a pull request.
